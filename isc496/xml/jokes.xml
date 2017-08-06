@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="jokes.xsl"?>
+<jokes>
+
+<joke>
+<question>Q: What type of key opens a banana?</question>
+<answer>A: A monkey</answer>
+</joke>
+
+<joke>
+<question>Q: What do you call security guards working outside Samsung shops?</question>
+<answer>A: Guardians of the Galaxy</answer>
+</joke>
+
+<joke>
+<question>Q: What do you call a belt with a watch on it?</question>
+<answer>A: A waist of time</answer>
+</joke>
+
+<joke>
+<question>Q: What washes up on very small beaches?</question>
+<answer>A: Microwaves</answer>
+</joke>
+
+<joke>
+<question>Q: Why did the computer break up with the Internet?</question>
+<answer>A: There was no connection</answer>
+</joke>
+
+<joke>
+<question>Q: Why can you never trust atoms?</question>
+<answer>A: They make up everything</answer>
+</joke>
+
+<joke>
+<question>Q: What did one candle say to another candle?</question>
+<answer>A: I'm going out tonight</answer>
+</joke>
+
+<joke>
+<question>Q: What is a mosquito's favorite sport?</question>
+<answer>A: Skin-diving</answer>
+</joke>
+
+<joke>
+<question>Q: Why can't the bicycle stand?</question>
+<answer>A: Because it's too tired</answer>
+</joke>
+
+<joke>
+<question>Q: Why don't oysters share their pearls?</question>
+<answer>A: Because they are shellfish</answer>
+</joke>
+
+</jokes>

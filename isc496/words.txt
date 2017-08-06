@@ -1,0 +1,81 @@
+create table Words (
+	id integer primary key autoincrement,
+	englishWord varchar not null,
+	spanishWord varchar not null,
+	category varchar not null
+);
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(1, 'Hello', 'Hola', 'Greetings');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(2, 'Good Morning', 'Buenos dias', 'Greetings');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(3, 'Good Afternoon', 'Buenas tardes', 'Greetings');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(4, 'Good Night', 'Buenas noches', 'Greetings');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(5, 'Welcome', 'Bienvenidos', 'Greetings');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(6, 'Soccer', 'Futbol', 'Sports');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(7, 'Basketball', 'Basquetbol', 'Sports');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(8, 'Baseball', 'Beisbol', 'Sports');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(9, 'Volleyball', 'Voleibol', 'Sports');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(10, 'Tennis', 'Tenis', 'Sports');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(11, 'Mouth', 'Boca', 'Body Parts');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(12, 'Arm', 'Brazo', 'Body Parts');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(13, 'Leg', 'Pierna', 'Body Parts');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(14, 'Hand', 'Mano', 'Body Parts');
+
+insert into Words
+(id, englishWord, spanishWord, category)
+values
+(15, 'Head', 'Cabeza', 'Body Parts');

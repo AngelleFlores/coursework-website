@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> English to Spanish Translation </title>
+<style type = "text/css">
+	body{
+        background-color: CadetBlue;
+        font-family: Arial;
+        font-size: 26pt;
+        color:FireBrick;
+	}
+	select {
+		width: 150px;
+		height: 22px;
+		border: 1px solid blue;
+	}
+</style>
+<!-- php
+  try{
+	$db  = new PDO('sqlite:words.db');
+	$greetings = "SELECT DISTINCT englishWord FROM Words WHERE category = 'Greetings'";
+	$db->exec($greetings);
+	$sports = "SELECT DISTINCT englishWord FROM Words WHERE category = 'Sports'";
+	$db->exec($sports);
+	$bodyparts = "SELECT DISTINCT englishWord FROM Words WHERE category = 'Body Parts'";
+	$db->exec($bodyparts);
+	
+  } catch(PDOException $e){
+	 echo $e->getMessage();
+     exit(0);
+  }
+   public function getWords($topic){
+	   if(strcmp($topic,'Greetings')){
+		  foreach($greetings as $greeting) {
+		     echo '<option value="'. $greeting . '"></option>';
+			 }
+	   } if(strcmp($topic,'Sports')){
+		   foreach($sports as $sport) {
+		     echo '<option value="'. $sport . '"></option>';
+	          }
+	   } if(strcmp($topic,'Body Parts')){
+		   foreach($bodyparts as $bodypart) {
+		    echo '<option value="'. $bodypart . '"></option>';
+	        }
+
+	   }
+   }
+ -->
+<script type = "text/javascript">
+	function translate(selection, topic) {
+		var englishWord = selection;
+		var category = topic;
+		var spanishWord;
+	}
+</script>
+</head>
+<body>
+<form>
+  <fieldset>
+	<legend>Greetings: </legend>
+	<select name ="greetings">
+	<!-- php
+		getWords("Greetings");
+	-->
+	</select>
+	&nbsp;
+    <input type="button" onclick="translate(this.form.greetings.value,'Greetings')" value="Translate"/>
+	&nbsp; &nbsp;
+    <input type="text" name="greeting" readonly />
+  </fieldset>
+  <br>
+  <fieldset>
+	<legend>Sports: </legend>
+	<select name ="sports">
+	<!-- php
+		getWords("Sports");
+	-->
+	</select>
+	&nbsp;
+    <input type="button" onclick="translate(this.form.sports.value,'Sports')" value="Translate"/>
+	&nbsp; &nbsp;
+	<input type="text" name="sport" readonly />
+  </fieldset>
+  <br>
+  <fieldset>
+	<legend>Body Parts: </legend>
+	<select name ="body_parts">
+	<!-- php
+		getWords("Body Parts");
+	-->
+	</select>
+	&nbsp;
+    <input type="button" onclick="translate(this.form.body_parts.value,'Body Parts')" value="Translate"/>
+	&nbsp;&nbsp;
+	<input type="text" name="body_part" readonly />
+  </fieldset>
+</form>
+
+</body>
+</html>

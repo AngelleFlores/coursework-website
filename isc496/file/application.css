@@ -1,0 +1,31 @@
+body {
+	background-color:#74C2E1;
+	color: black;
+}
+
+table {
+	background-color: silver;
+	border: 5px solid teal;
+	padding: 10px;
+}
+
+select{
+	width:150px;
+	height:22px;
+}
+
+table.wide {
+	font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td.center, th.center {
+    border: 1px solid #dddddd;
+    text-align: center;
+	padding: 5px;
+}
+
+table.wide tr:nth-child(even) {
+    background-color: #dddddd;
+}

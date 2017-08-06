@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Teacher's Aid Application</title>
+<link rel="stylesheet" type="text/css" href="application.css">
+<script type="text/javascript">
+	function checkGPA() {
+		var element = document.getElementById("id_gpa");
+		var gpa = element.value;
+		if (isNaN(parseFloat(gpa))) {
+			document.getElementById("id_gpa").value = "";
+		}
+	}
+</script>
+</head>
+
+<body>
+<h2>Teacher's Aid Application</h2>
+
+<div>
+<form target="_blank" action="application.php" method="post"
+	  enctype="multipart/form-data">
+<table>
+	<tr>
+		<td>Department:</td>
+		<td>
+		<input type="text" name="department" id="id_department"
+		       size="50" />
+		</td>
+	</tr>
+	<tr>
+		<td>First Name:</td>
+		<td>
+		<input type="text" name="first_name" id="id_first_name"
+			   size="25" />
+		</td>
+	</tr>
+	<tr>
+		<td>Last Name:</td>
+		<td>
+		<input type="text" name="last_name" id="id_last_name"
+			   size="25" />
+		</td>
+	</tr>
+	<tr>
+		<td>Major:</td>
+		<td>
+		<input type="text" name="major" id="id_major"
+			   size="50" />
+		</td>
+	</tr>
+	<tr>
+		<td>GPA:</td>
+		<td>
+		<input type="text" name="gpa" id="id_gpa"
+			   size="5" />
+		</td>
+	</tr>
+	<tr>
+		<td>Resume:</td>
+		<td>
+		<input type="file" name="resume" id="id_resume">
+		</td>
+	</tr>
+</table>
+<br>
+<input type="submit" onclick="checkGPA()" value="Submit" />
+</form>
+</div>
+</body>
+</html>
