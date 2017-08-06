@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment #4B</title>
+
+<style type="text/css">
+
+body {
+  /* width: 800px; */
+  width: auto;
+  height: 600px;
+  top: 10px;
+  color: #000000;
+  background: #d1b3ff;
+  border: 2px solid black;
+  margin:  12px 30px 12px 30px;
+  padding: 12px 30px 12px 30px;
+  font: normal 24px Verdana;
+  line-height: 36px;
+  visibility: visible;
+  /* overflow: auto; */
+}
+
+</style>
+
+<script type="text/javascript">
+
+  var asked = false;
+  var i = 0;
+  var questions  = new Array();
+  var answers    = new Array();
+      questions[i] = "Who says \"Even death trembles in my presence.\"?";
+      answers[i]   = "Veigar";
+      i++;
+
+      questions[i] = "Who says \"Knowledge through... disintegration.\"?";
+      answers[i]   = "Vel'Koz";
+      i++;
+
+      questions[i] = "Who says \"There's always another wave.\"?";
+      answers[i]   = "Nami";
+      i++;
+
+      questions[i] = "Who says \"The answer lies within.\"?";
+      answers[i]   = "Karma";
+      i++;
+	  
+	  questions[i] = "Who says \"Ready to set the world on fire? Heheheh...\"?";
+      answers[i]   = "Brand";
+      i++;
+	  
+	  questions[i] = "Who says \"The forest holds many surprises.\"?";
+      answers[i]   = "Zyra";
+      i++;
+	  
+	  questions[i] = "Who says \"How about a drink?\"?";
+      answers[i]   = "Singed";
+      i++;
+	  
+	  questions[i] = "Who says \"My shield is my sword.\"?";
+      answers[i]   = "Braum";
+      i++;
+	  
+	  questions[i] = "Who says \"I'll follow your lead, Valor.\"?";
+      answers[i]   = "Quinn";
+      i++;
+	  
+	  questions[i] = "Who says \"Explosion first, questions later.\"?";
+      answers[i]   = "Ziggs";
+      i++;
+
+  var currentQuestion = questions.length-1;
+
+  function askQuestion() {
+    // currentQuestion = (currentQuestion + 1) % questions.length;
+    currentQuestion = Math.floor(Math.random()*questions.length);
+    var tmp = document.getElementById('answer');
+        tmp.style.visibility = 'hidden';
+        tmp.innerHTML = "";
+        tmp = document.getElementById('question');
+        tmp.style.visibility = 'visible';
+        tmp.innerHTML = questions[currentQuestion];
+    asked = true;
+  }
+  function showAnswer() {
+    if (asked) {
+      var tmp = document.getElementById('answer');
+          tmp.style.visibility = 'visible';
+          tmp.innerHTML = answers[currentQuestion];
+    }
+    asked = false;
+  }
+
+</script>
+
+</head>
+<body>
+
+<p><b>League of Legends Champions' Quotes Quiz</b>
+</p>
+
+<div>
+<form action="javascript:void(0)">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<button style="width:200; height:150;"
+        name="button1"
+        onclick="askQuestion()"
+><img src="images/lol.JPG"
+      width="83"
+      height="44"
+      border="0" />
+Here's a question.
+</button>
+</td><td>
+
+<button style="width:200; height:150;"
+        name="button2"
+        onclick="showAnswer()"
+><img src="images/lol.JPG"
+      width="83"
+      height="44"
+      border="0" />
+Want the answer?
+</button>
+</td></tr>
+</table>
+
+</form>
+</div>
+
+<div id="question" style="border:1px black solid;">
+</div>
+<div id="answer" style="border:1px black solid;">
+</div>
+</body>
+</html>

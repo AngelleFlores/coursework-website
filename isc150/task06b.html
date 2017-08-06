@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam 1 &mdash; Problem 15</title>
+</head>
+<body>
+  <form name="distance_form">
+    <p> Enter the speed at which you pedalled your bicycle:
+    <input name="speed" type="text" size="15">
+    </p>
+
+    <p> Enter how many hours you rode:
+    <input name="time" type="text" size="15">
+    </p>
+	
+	<p>
+    <input name="calculate_distance" type="button"
+           value="Calculate Distance Covered"
+           onClick="
+           this.form.distance.value =
+               this.form.speed.value * this.form.time.value;"
+	/>
+	</p>
+	
+	<p>The total distance covered was 
+	<input name="distance" type="text" readonly size="15"> miles.
+	</p>
+  </form>
+</body>
+</html>

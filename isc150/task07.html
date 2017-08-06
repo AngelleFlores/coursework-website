@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array of Objects &mdash; Fruits</title>
+    <style type="text/css">
+	  body {
+	    background: #ccffcc;
+	  }
+      table {
+        border-collapse: collapse;
+        border: 1px solid green;
+      }
+      td, th {
+        padding: 8px;
+        text-align: left;
+      }
+      input {
+        text-align: left;
+      }
+    </style>
+    <script type="text/javascript">
+      var fruits = new Array();
+      function Fruit(name, color, texture, taste) {
+         this.name = name;
+         this.color = color;
+         this.texture = texture;
+		 this.taste = taste;
+      }
+      function addFruit(name, color, texture, taste) {
+        var fruit = new Fruit(name, color, texture, taste);
+        fruits.push(fruit);
+      }
+      function showFruits() {
+        var node = document.getElementById('fruit_div');
+        var data = "<table>";
+		data += "<tr><th>Name</th><th>Color</th>" +
+		        "<th>Texture</th><th>Taste</th></tr>";
+        if (node) {
+          for (var i = 0; i < fruits.length; i++) {
+            var fruit =  fruits[i];
+            var name = fruit.name;
+			var color = fruit.color;
+			var texture = fruit.texture;
+			var taste = fruit.taste;
+            var datum = "<tr><td>" + name + "</td> " +
+                        "<td>" + color + "</td>" +
+                        "<td>" + texture + "</td>" +
+						"<td>" + taste + "</td></tr>";
+            data += datum;
+          }
+		  data += "</table>";
+          node.innerHTML = data;
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+  <h1>List of Fruits</h1>
+  <form name="fruit_form">
+  <table>
+  <tr><td>
+    Name of fruit:
+    <input type="text" name="name" value="Enter the fruit's name here"
+           onclick="if (this.value == this.defaultValue) this.value=''"
+           size="25"
+    />
+  </td></tr>
+  <tr><td>
+    Color of fruit:
+    <input type="text" name="color" value="Enter the fruit's color here"
+           onclick="if (this.value == this.defaultValue) this.value=''"
+           size="25"
+    />
+  </td></tr>
+  <tr><td>
+    Texture of fruit:
+    <input type="text" name="texture" value="Enter the fruit's texture here"
+           onclick="if (this.value == this.defaultValue) this.value=''"
+           size="25"
+    />
+  </td></tr>
+  <tr><td>
+    Taste of fruit:
+	<input type="text" name="taste" value="Enter if fruit is sweet, sour, etc."
+	       onclick="if (this.value == this.defaultValue) this.value=''"
+		   size="25"
+	/>
+  </td></tr>
+
+  <tr><td>
+    <input type="button"
+           onclick="addFruit(this.form.name.value, this.form.color.value, this.form.texture.value,
+		            this.form.taste.value)"
+           value="Add a Fruit"
+    />
+    <input type="button"
+           onclick="showFruits()"
+           value="Show Fruits"
+    />
+    <input type="reset"
+           value="Reset Form"
+    />
+  </td></tr>
+  </table>
+  </form> <br><br>
+  <div id="fruit_div">
+  </div>
+  </body>
+</html>
+

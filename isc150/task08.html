@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comparison of Three Planets in our Solar System</title>
+    <style type="text/css">
+      [type=button] {
+         width:270px;
+		 background-color:black;
+		 color:white;
+		 border:groove;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        padding: 15px;
+        text-align: left;
+      }
+      input {
+        text-align: left;
+      }
+      h1 {
+        font-size:130%;
+      }
+      ul {
+        padding-left:0;
+      }
+      .left {
+        float:left;
+        width:270px;
+        padding:20px;
+      }
+    </style>
+    <script type="text/javascript">
+      function removeChildren(wherefrom) {
+        var parent = document.getElementById(wherefrom);
+        if (parent) {
+          while (parent.hasChildNodes())
+            parent.removeChild(parent.lastChild);
+        }
+      }
+      var planet = null;
+      function Planet(name, comp, temp, moons, picture) {
+        this.name = name;
+        this.comp = comp;
+        this.temp = temp;
+		this.moons = moons;
+        this.picture = picture;
+      }
+	  
+      function showPlanet(p_object, whereso) {
+        var planet = p_object;
+        var node = document.getElementById(whereso);
+
+        if (node) {
+          var data = '<h1>' + planet.name + '</h1>';
+		  var img = '<p><img src="images/' + planet.picture +
+                    '" width="240" height="240" border="0"' +
+                    ' /></p>';
+		  data += img;
+          data += '<ul style="list-style-type:square">';
+		  data += '<li><b>Composition: </b>' + planet.comp + '</li>';
+		  data += '<li><b>Average Surface Temperature: </b>' + planet.temp 
+		          + '</li>';
+		  data += '<li><b>Moons: </b>' + planet.moons + '</li>';
+          data += "</ul>";
+          
+          node.innerHTML = data;
+        }
+      }
+	  
+      function hideEarth() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == 'earth') {
+            nodes[n].value = 'Earth';
+            nodes[n].onclick = showEarth;
+            break;
+          }
+        }
+        removeChildren('earth_div');
+        return false;
+      }
+	  
+      function hideJupiter() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == 'jupiter') {
+            nodes[n].value = 'Jupiter';
+            nodes[n].onclick = showJupiter;
+            break;
+          }
+        }
+        removeChildren('jupiter_div');
+        return false;
+      }
+	  
+	  function hideNeptune() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == 'neptune') {
+            nodes[n].value = 'Neptune';
+            nodes[n].onclick = showNeptune;
+            break;
+          }
+        }
+        removeChildren('neptune_div');
+        return false;
+      }
+
+      function showEarth() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == "earth") {
+            nodes[n].value = 'Hide';
+            nodes[n].onclick = hideEarth;
+            break;
+          }
+        }
+        var name = "Earth";
+        var comp = "rocks, metals";
+        var temp = "290 K";
+		var moons = "1";
+		var picture = "earth.JPG";
+        var planet = new Planet(name, comp, temp, moons, picture);
+        showPlanet(planet, 'earth_div');
+      }
+
+      function showJupiter() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == "jupiter") {
+            nodes[n].value = 'Hide';
+            nodes[n].onclick = hideJupiter;
+            break;
+          }
+        }
+        var name = "Jupiter";
+        var comp = "mostly hydrogen and helium";
+        var temp = "125 K";
+		var moons = "at least 67";
+		var picture = "jupiter.JPG";
+        var planet = new Planet(name, comp, temp, moons, picture);
+        showPlanet(planet, 'jupiter_div');
+      }
+	  
+	  function showNeptune() {
+        var nodes = document.getElementsByTagName('input');
+        for (var n in nodes) {
+          if (nodes[n].getAttribute('name') == "neptune") {
+            nodes[n].value = 'Hide';
+            nodes[n].onclick = hideNeptune;
+            break;
+          }
+        }
+        var name = "Neptune";
+        var comp = "hydrogen, helium, hydrogen compounds";
+        var temp = "60 K";
+		var moons = "at least 13";
+		var picture = "neptune.JPG";
+        var planet = new Planet(name, comp, temp, moons, picture);
+        showPlanet(planet, 'neptune_div');
+      }
+    </script>
+  </head>
+  <body>
+  <h1>Comparison of Three Planets in our Solar System</h1>
+  <p>When studying astronomy, one will analyze the different characteristics 
+  of the planets to understand their relation to the sun.</p>
+  <form>
+  <table>
+    <tr>
+	  <td>
+	    <input type="button" name="earth" value="Earth"
+           onclick="showEarth()"
+		/>
+      </td>
+	  <td>
+        <input type="button" name="jupiter" value="Jupiter"
+               onclick="showJupiter()"
+        />
+      </td>
+	  <td>
+	    <input type="button" name="neptune" value="Neptune"
+		       onclick="showNeptune()"
+		/>
+	  </td>
+    </tr>
+  </table>
+  </form>
+  <div id="earth_div" class="left">
+  </div>
+  <div id="jupiter_div" class="left">
+  </div>
+  <div id="neptune_div" class="left">
+  </div>
+  </body>
+</html>
+

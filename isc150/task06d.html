@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam 1 &mdash; Problems 17 &amp; 18</title>
+  <script>
+    function total(array) {
+		var tot = 0;
+		for (var i = 0; i < array.length; i++)
+			tot += parseFloat(array[i]);
+		return tot;
+    }
+	
+	function avg(array) {
+	    var avgValue = total(array) / array.length;
+		return avgValue.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <form name="salaries_form">
+    <p> Enter how much each employee was paid (in thousands of dollars):
+    <input name="salaries" type="text" size="75"
+	    value="20.5, 30.7, 19.2, 21.3"/>
+	</p>
+    <p>
+    <input name="show_average" type="button"
+	    value="Calculate average salary"
+	    onClick="
+
+         this.form.average.value =
+	         avg(this.form.salaries.value.split(/\s*,\s*/));"
+	/>
+	</p>
+    <p> Here is the average employee salary:
+    <input name="average" type="text" readonly size="25"/>
+	</p>
+  </form>
+</body>
+</html>

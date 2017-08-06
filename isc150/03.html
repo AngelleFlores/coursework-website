@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Quiz</title>
+
+<style type="text/css">
+
+body {
+  width: 800px;
+  height: 500px;
+  top: 10px;
+  color: #000000;
+  background: #ffff99;
+  border: 2px solid black;
+  margin:  12px 30px 12px 30px;
+  padding: 12px 30px 12px 30px;
+  font: normal 24px Verdana;
+  line-height: 36px;
+  visibility: visible;
+}
+
+</style>
+
+<script type="text/javascript">
+
+  var ans1 = "&lt;script&gt;";
+
+  var ans2 = "Use Math.round() method";
+
+  var ans3 = "var variableName;";
+
+  var ans4 = "function functionName()";
+
+  function showAnswer(which) {
+    var tmp = document.getElementById('answer');
+        tmp.style.visibility = 'visible';
+        tmp.innerHTML = which;
+  }
+
+</script>
+
+</head>
+<body>
+
+<p><b>Javascript Quiz</b>
+</p>
+
+<div>
+<form action="javascript:void(0)">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<button style="width:200px; height:150px;"
+        name="button1"
+        onclick="showAnswer(ans1)"
+><img src="images/javascript.JPG"
+      width="58"
+      height="60"
+      border="0" />
+<br>
+Inside which HTML element do we put Javascript?
+</button>
+</td><td>
+
+<button style="width:200px; height:150px;"
+        name="button2"
+        onclick="showAnswer(ans2)"
+><img src="images/javascript.JPG"
+      width="58"
+      height="60"
+      border="0" />
+<br>
+How do you round a number to the nearest integer?
+</button>
+</td><td>
+
+<button style="width:200px; height:150px;"
+        name="button3"
+        onclick="showAnswer(ans3)"
+><img src="images/javascript.JPG"
+      width="58"
+      height="60"
+      border="0" />
+<br>
+How do you declare a Javascript variable?
+</button>
+</td><td>
+
+<button style="width:200px; height:150px;"
+        name="button4"
+        onclick="showAnswer(ans4)"
+><img src="images/javascript.JPG"
+      width="58"
+      height="60"
+      border="0" />
+<br>
+How do you declare a function?
+</button>
+</td></tr>
+</table>
+</form>
+</div>
+
+<div id="answer" style="border:1px black solid;">
+</div>
+</body>
+</html>

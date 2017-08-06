@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript - Up to M</title>
+</head>
+<script type="text/javascript">
+   /**
+    * Function: adds numbers until reaches M or more
+    * Returns: last number used in summing to M
+    */
+   function mOrMoreFrom1(sum) {
+       var accumulator = 0;
+	   var m = parseInt(sum);
+       var i = 1;
+       while (accumulator < m) {
+          accumulator += i;
+          document.the_form.total.value = accumulator;
+          i++;
+        }
+       return i-1;
+    }
+</script>
+<body>
+<p>
+<h2>How many numbers to add up to M or more?</h2>
+</p>
+<div style="border:2px dashed purple;background:#e6ccff;">
+<form name="the_form">
+<br>
+&nbsp;
+M:
+	<input type="text"
+		   id="sum"
+		   name="sum"
+		   value="100"
+		   size="10"
+	/>
+<br><br>
+&nbsp;
+Accumulated sum:
+   <input type="text"
+          id="total"
+          name="total"
+          value="0"
+          readonly
+          size="20"
+   />
+<br><br>
+&nbsp;
+Last number used:
+   <input type="text"
+          id="last"
+          name="last"
+          readonly
+          size="10"
+   />
+<br><br>
+&nbsp;
+<input type="button"
+       value="Tell me"
+       onclick="this.form.last.value = mOrMoreFrom1(this.form.sum.value);"
+/>
+&nbsp;
+<input type="reset" value="Reset Form"></td></tr>
+<br><br>
+</form>
+</div>
+</body>
+</html>
+

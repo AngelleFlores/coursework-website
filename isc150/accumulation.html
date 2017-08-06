@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Accumulators Page</title>
+  </head>
+  <script type="text/javascript">
+     function sumNumDivBy5FromA2B(a, b) {
+        var accumulator = 0;
+        var start = parseInt(a);
+        var stop = parseInt(b);
+		while(start % 5 != 0) {
+			start++;
+		}
+        for (var i = start; i <= stop; i = i + 5) {
+           accumulator += i;
+        }
+        return accumulator;
+     }
+	 function sumNumDivByNFromA2B(a, b, num) {
+		var accumulator = 0;
+		var start = parseInt(a);
+		var stop = parseInt(b);
+		var n = parseInt(num);
+		while(start % n != 0) {
+			start++;
+		}
+		for (var i = start; i <= stop; i = i + n) {
+			accumulator += i;
+		}
+		return accumulator;
+	 }
+  </script>
+  <body>
+<h1>Accumulating Functions</h1>
+<p>
+<h2>Sum all the numbers <i>divisible by 5</i> from <b>A</b> to <b>B</b></h2>
+</p>
+<div style="border:2px dashed purple;background:#e6ccff;">
+  <form>
+  <br>
+A: <input type="text"
+          id="A"
+          name="A"
+          size="10"
+          value="1"
+          onFocus="if (value == this.defaultValue) value = ''"
+   />
+&nbsp;
+B: <input type="text"
+          id="B"
+          name="B"
+          size="10"
+          value="100"
+          onFocus="if (value == this.defaultValue) value = ''"
+   />
+<br><br>
+Accumulated sum:
+   <input type="text"
+          id="TOTAL"
+          name="TOTAL"
+          readonly
+          size="20"
+   />
+<br><br>
+<input type="button"
+       value="Do Accumulation"
+       onclick="this.form.TOTAL.value = sumNumDivBy5FromA2B(this.form.A.value, this.form.B.value)"
+   />
+<input type="reset" value="Reset Form"></td></tr>
+<br><br>
+</form>
+</div>
+<p>
+<h2>Sum all the numbers <i>divisible by N</i> from <b>A</b> to <b>B</b></h2>
+</p>
+<div style="border:2px dashed purple;background:#e6ccff;">
+  <form>
+  <br>
+A: <input type="text"
+          id="A"
+          name="A"
+          size="10"
+          value="1"
+          onFocus="if (value == this.defaultValue) value = ''"
+   />
+&nbsp;
+B: <input type="text"
+          id="B"
+          name="B"
+          size="10"
+          value="100"
+          onFocus="if (value == this.defaultValue) value = ''"
+   />
+&nbsp;
+N: <input type="text"
+		  id="N"
+		  name="N"
+		  size="10"
+		  value="1"
+		  onFocus="if (value == this.defaultValue) value = ''"
+   />
+<br><br>
+Accumulated sum:
+   <input type="text"
+          id="TOTAL"
+          name="TOTAL"
+          readonly
+          size="20"
+   />
+<br><br>
+<input type="button"
+       value="Do Accumulation"
+       onclick="this.form.TOTAL.value = sumNumDivByNFromA2B(this.form.A.value, this.form.B.value, this.form.N.value)"
+   />
+<input type="reset" value="Reset Form"></td></tr>
+<br><br>
+</form>
+</div>
+</body>
+</html>
+

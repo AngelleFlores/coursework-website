@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sort Items Based on Properties</title>
+    <style>
+	  body {
+	    background: #800040;
+	  }
+      textarea {
+        font-size: 12pt;
+		background: #ffb3da;
+      }
+	  input {
+	    font-size: 12pt;
+        background: #66ccff;
+	  }
+    </style>
+    <script type="text/javascript">
+      function brand(item) {
+          return item.split(/[-]+/)[0];
+      }
+      function color(item) {
+          return item.split(/[-]+/)[1];
+      }
+	  function size(item) {
+          return item.split(/[-]+/)[2];
+      }
+	  function price(item) {
+          return item.split(/[-]+/)[3];
+      }
+      function compare_brand(a, b) {
+          var b_a = brand(a);
+          var b_b = brand(b);
+          if ( b_a < b_b )       return -1;
+          else if ( b_a == b_b ) return 0;
+          else                   return 1;
+      }
+      function compare_color(a, b) {
+          var c_a = color(a);
+          var c_b = color(b);
+          if ( c_a < c_b )       return -1;
+          else if ( c_a == c_b ) return 0;
+          else                   return 1;
+      }
+      function compare_size(a, b) {
+          var s_a = size(a);
+          var s_b = size(b);
+          if ( s_a < s_b )       return 1;
+          else if ( s_a == s_b ) return 0;
+          else                   return -1;
+      }
+	  function compare_price(a, b) {
+          var p_a = price(a);
+          var p_b = price(b);
+          if ( +p_a < +p_b )       return -1;
+          else if ( +p_a == +p_b ) return 0;
+          else                     return 1;
+      }
+      function displaySort(form, cmp) {
+        var temp = form.values.value.replace(/(^[\s\r\n]+)|([\s\r\n]+$)/g, '');
+        var list = temp.split(/\s*[\r\n]+\s*/);
+
+        for (i = 0; i < list.length; i++) {
+          console.log('DEBUG: item at ' + i + ' is |' + list[i] + '|');
+        }
+        list.sort(cmp);
+        for (var i = 0; i < list.length; i++) {
+		  if(i < 9) {
+		    list[i] = " " + (i+1) + " " + list[i];
+		  } else {
+		    list[i] = (i+1) + " " + list[i];
+		  }
+        }
+        for (i = 0; i < list.length; i++) {
+          console.log('DEBUG: item at ' + i + ' is |' + list[i] + '|');
+        }
+        var listAsString = list.join("\n");
+        form.sortedDisplay.value = listAsString;
+      }
+
+
+    </script>
+  </head>
+  <body>
+  <h2>Shirt Sorter &mdash; by brand, color, size, or price</h2>
+  <form>
+<div style="float:left;">
+    <textarea name="values"
+           rows="11"
+           cols="52"
+    >
+Old Navy-------------------blue----small----5.00
+Forever 21-----------------green---medium---6.23
+PacSun---------------------yellow--large---10.50
+Gap------------------------red-----small----8.45
+Hollister Co.--------------black---medium--11.69
+Tommy Hilfiger-------------purple--small---12.87
+J. Crew--------------------orange--large---10.40
+American Eagle Outfitters--brown---medium--15.21
+Banana Republic------------pink----small---12.50
+Ralph Lauren---------------white---large---20.62
+</textarea> &nbsp;&nbsp;&nbsp;
+</div>
+<div style="float:left;">
+    <textarea name="sortedDisplay"
+           readonly
+           style="font-size:16pt;font-weight:normal;"
+           rows="11"
+           cols="52"
+    >Sorted list will show here</textarea>
+</div>
+<br clear="both">
+    <input type="button"
+           onclick="displaySort(this.form, compare_brand)"
+           value="Sort By Brand"
+    /> &nbsp;
+    <input type="button"
+           onclick="displaySort(this.form, compare_color)"
+           value="Sort By Color"
+    /> &nbsp;
+    <input type="button"
+           onclick="displaySort(this.form, compare_size)"
+           value="Sort By Size"
+    /> &nbsp;
+    <input type="button"
+           onclick="displaySort(this.form, compare_price)"
+           value="Sort By Price"
+    /> &nbsp;
+  </form>
+  </body>
+</html>
+

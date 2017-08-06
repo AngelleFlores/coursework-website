@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment #4A</title>
+
+<style type="text/css">
+
+body {
+  /* width: 800px; */
+  width: auto;
+  height: 600px;
+  top: 10px;
+  color: #000000;
+  background: #b3daff;
+  border: 2px solid black;
+  margin:  12px 30px 12px 30px;
+  padding: 12px 30px 12px 30px;
+  font: normal 24px Verdana;
+  line-height: 36px;
+  visibility: visible;
+  /* overflow: auto; */
+}
+
+</style>
+
+<script type="text/javascript">
+
+  var asked = false;
+  var i = 0;
+  var questions  = new Array();
+  var answers    = new Array();
+      questions[i] = "What does HTML stand for?";
+      answers[i]   = "Hyper Text Markup Language";
+      i++;
+
+      questions[i] = "Who makes the Web standards?";
+      answers[i]   = "The World Wide Web Consortium";
+      i++;
+
+      questions[i] = "What HTML element is used for the largest" +
+	                 " heading?";
+      answers[i]   = "&lth1&gt";
+      i++;
+
+      questions[i] = "How do you create a hyperlink?";
+      answers[i]   = "&lta href=\"url\"&gtLink&lt/a&gt";
+      i++;
+	  
+	  questions[i] = "How can you open a link in a new tab/browser" + 
+	                 " window?";
+      answers[i]   = "&lta href=\"url\" target=\"_blank\"&gt";
+      i++;
+	  
+	  questions[i] = "What are three table elements?";
+      answers[i]   = "&lttable&gt &lttr&gt &lttd&gt";
+      i++;
+	  
+	  questions[i] = "How can you make a numbered list?";
+      answers[i]   = "&ltol&gt";
+      i++;
+	  
+	  questions[i] = "How can you make a bulleted list?";
+      answers[i]   = "&ltul&gt";
+      i++;
+	  
+	  questions[i] = "How do you make a text input field?";
+      answers[i]   = "&ltinput type=\"text\"&gt";
+      i++;
+	  
+	  questions[i] = "How do you insert an image?";
+      answers[i]   = "&ltimg src=\"image.jpg\" alt=\"Image\"&gt";
+      i++;
+
+  var currentQuestion = questions.length-1;
+
+  function askQuestion() {
+    currentQuestion = (currentQuestion + 1) % questions.length;
+    var tmp = document.getElementById('answer');
+        tmp.style.visibility = 'hidden';
+        tmp.innerHTML = ""
+        tmp = document.getElementById('question');
+        tmp.style.visibility = 'visible';
+        tmp.innerHTML = questions[currentQuestion];
+        asked = true;
+  }
+  function showAnswer() {
+    if (asked) {
+       var tmp = document.getElementById('answer');
+           tmp.style.visibility = 'visible';
+           tmp.innerHTML = answers[currentQuestion];
+    }
+    asked = false;
+  }
+
+</script>
+
+</head>
+<body>
+
+<p><b>HTML Quiz</b>
+</p>
+
+<div>
+<form action="javascript:void(0)">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<button style="width:200; height:150;"
+        name="button1"
+        onclick="askQuestion()"
+><br><img src="images/tags.JPG"
+      width="112"
+      height="95"
+      border="2px" />
+Here's a question.<br><br>
+</button>
+</td><td>
+
+<button style="width:200; height:150;"
+        name="button2"
+        onclick="showAnswer()"
+><br><img src="images/tags.JPG"
+      width="112"
+      height="95"
+      border="2px" />
+Want the answer?<br><br>
+</button>
+</td></tr>
+</table>
+
+</form>
+</div>
+
+<div id="question" style="border:1px black solid;">
+</div>
+<div id="answer" style="border:1px black solid;">
+</div>
+</body>
+</html>

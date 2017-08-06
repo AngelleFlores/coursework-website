@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Cone Statistics</title>
+
+<style>
+ body {
+   background: chocolate; /* #D2691E */
+   font-size: 18pt;
+   color: #ffffff;
+   margin-top: 0;
+   margin-left: 0;
+ }
+ a:link, a:visited {
+   color: #ffffff;
+   text-decoration: none;
+ }
+ table, td {
+   border-collapse: collapse;
+   font-size: 100%;
+ }
+ td {
+   border-collapse: collapse;
+   border: 1px solid black;
+ }
+ .input, .output {
+   background: brown; /* #A52A2A */
+   font-family:arial;
+   font-size:150%;
+   color: #ffffff;
+   text-align: center;
+ }
+ .header {
+   font-size: 24pt;
+   text-align: center;
+ }
+ .butt {
+   width: 100%;
+   font-size:150%;
+ }
+</style>
+
+<script type="text/javascript">
+  Math.square = function(x) { return x * x }
+  
+  function clearit() {
+    document.coneform.volume.value = "";
+    document.coneform.surfacearea.value = "";
+  }
+
+  function findvolume() {
+    var h = document.coneform.height.value;
+    var r = document.coneform.radius.value;
+	var volume = (1/3 * Math.PI * Math.square(r) * h);
+    document.coneform.volume.value = volume;
+  }
+
+  function findsurfacearea() {
+    var h = document.coneform.height.value;
+    var r = document.coneform.radius.value;
+	var slant = Math.sqrt(Math.square(h) + Math.square(r));
+    var surfaceArea = ((Math.PI * r * slant)+(Math.PI * Math.square(r)));
+    document.coneform.surfacearea.value = surfaceArea;
+  }
+</script>
+
+</head>
+<body bgcolor="#D2691E" text="#FFFFFF"
+      link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"
+>
+
+<p class="header">
+Cone Statistics
+</p>
+
+<p>
+This page helps an ice cream vendor estimate:
+<ul type="disc">
+<li> how much ice cream will be needed to fill each cone and
+<li> how much chocolate will be required to coat the outside
+of each cone.
+</ul>
+</p>
+<p>
+Note: to calculate pi, use <tt>Math.PI</tt>
+</p>
+
+<p>
+<form name="coneform">
+  <table border="2" cellpadding="5" cellspacing="2">
+  <tr><td>
+     <table border="1" cellpadding="1" cellspacing="1">
+       <tr><td>
+        Radius:
+       </td><td>
+        <input class="input" name="radius" type="text" size="10" value="3" onClick="this.value=''" />
+         cm
+       </td></tr>
+       <tr><td>
+        Height:
+       </td><td>
+        <input class="input" name="height" type="text" size="10" value="4" onClick="this.value=''" />
+         cm
+       </td></tr>
+     </table>
+  </td></tr>
+  <tr><td>
+     <table border="1" cellpadding="1" cellspacing="1">
+       <tr><td>
+        Volume:
+       </td><td>
+        <input class="output" name="volume" type="text" size="20" readonly />
+         cm<sup>3</sup>
+       </td></tr>
+       <tr><td>
+        Surface Area:
+       </td><td>
+        <input class="output" name="surfacearea" type="text" size="20" readonly />
+         cm<sup>2</sup>
+       </td></tr>
+     </table>
+
+  </td></tr>
+  <tr><td>
+     <table border="1" cellpadding="1" cellspacing="1">
+       <tr><td>
+        <input class="butt" name="volumebutton" value="Find Volume" type="button" onClick="findvolume();" />
+       </td></tr>
+       <tr><td>
+        <input class="butt" name="surfaceareabutton" value="Find Surface Area" type="button" onClick="findsurfacearea();" />
+       </td></tr>
+       <tr><td>
+        <input class="butt" name="clearbutton" value="Clear outputs" type="button" onClick="clearit();" />
+       </td></tr>
+     </table>
+
+  </td></tr>
+  </table>
+</form>
+</p>
+
+</body>
+</html>

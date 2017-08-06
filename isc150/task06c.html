@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam 1 &mdash; Problem 16</title>
+</head>
+<body>
+  <form name="add_form">
+    <p> X:
+    <input name="x" type="text" size="15"/>
+    </p>
+
+    <p> Y:
+    <input name="y" type="text" size="15"/>
+    </p>
+
+    <input name="addition" type="button"
+           value="Do addition"
+           onClick="
+
+           this.form.sum.value =
+               parseInt(this.form.x.value) + parseInt(this.form.y.value);"
+      />
+    </p>
+
+    <p> The sum of X and Y is
+    <input name="sum" type="text" readonly size="15"/>.
+    </p>
+    </form>
+</body>
+</html>

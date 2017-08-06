@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>JavaScript Multiplication Page</title>
+  </head>
+  <body>
+<h1>Sample Javascript &mdash; Multiplication</h1>
+</p>
+<p>
+<h2>Enter values for <tt>X</tt> and <tt>Y</tt> and press <tt>Do Multiplication</tt> button</h2>
+</p>
+  <form>
+<table border="0" cellpadding="5" cellspacing="0">
+<tr><td align="center"><label for="x">X</label></td>
+    <td>&nbsp;</td>
+    <td align="center"><label for="y">Y</label></td>
+    <td>&nbsp;</td>
+    <td align="center"><label for="z">Z</label></td></tr>
+<tr><td align="center"><input type="text"
+               id="x"
+               name="x"
+               size="10"
+               value="100"
+               onFocus="if (value == this.defaultValue) value = ''"
+        /></td>
+    <td align="center"><b>*</b></td>
+    <td align="center"><input type="text"
+               id="y"
+               name="y"
+               size="10"
+               value="200"
+               onFocus="if (value == this.defaultValue) value = ''"
+        /></td>
+    <td align="center"><b>=</b></td>
+    <td align="center"><input type="text"
+               id="z"
+               name="z"
+               readonly
+               size="10" /></td></tr>
+<tr><td colspan="5">
+    <input type="button"
+           onclick="this.form.z.value = parseInt(this.form.x.value) * parseInt(this.form.y.value)"
+           value="Do Multiplication" />
+    <input type="reset" value="Reset Form"></td></tr>
+</table>
+  </form>
+  </body>
+</html>
+
