@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ISC 399</title>
+  <style type="text/css">
+    body {
+	  background:#66CDAA;
+	}
+	div {
+	  float:left;
+	  margin: 15px 15px 15px 15px;
+	}
+  </style>
+</head>
+<body>
+  <h3>Assignment #2 &mdash; Minesweeper App Version 6</h3>
+  <p>This assignment is a version of the <tt>Minesweeper</tt> computer game. 
+  This version of the game includes sounds and images.</p>
+  <div>
+  <a href="ms_images/main_activity_ms_v6.PNG">
+  <img src="ms_images/main_activity_ms_v6.PNG" width="223" height="400" 
+  alt="Minesweeper V6 Main Activity">
+  </a>
+  </div>
+  <div><br>
+  This is how the startup screen looks like. A sound will<br>
+  play at the beginning and an image will be displayed.<br>
+  One would enter values for the number of rows, columns,<br>
+  and mines (in that order) in the <tt>EditText</tt> items. Then, the<br>
+  "Build Grid" button would be pressed to create your own<br>
+  customized Minesweeper game.<br>
+  <ul>
+  <li>Used <tt>MediaPlayer</tt> to play sound</li>
+  </ul>
+  </div>
+  <br clear="both">
+  <div>
+  <a href="ms_images/game_activity_ms_v6_1.PNG">
+  <img src="ms_images/game_activity_ms_v6_1.PNG" width="223" height="400" 
+  alt="Minesweeper V6 Game Activity 1">
+  </a>
+  </div>
+  <div><br>
+  This is the screen that would be viewed after clicking<br>
+  the "Build Grid" button.<br>
+  <ul>
+  <li>Used <tt>ScrollView</tt></li>
+  </ul>
+  </div>
+  <br clear="both">
+  <div>
+  <a href="ms_images/game_activity_ms_v6_2.PNG">
+  <img src="ms_images/game_activity_ms_v6_2.PNG" width="223" height="400" 
+  alt="Minesweeper V6 Game Activity 2">
+  </a>
+  </div>
+  <div><br>
+  This is an example of what you would see if you pressed<br>
+  all the <tt>TextView</tt> tiles. This is to demonstrate the use of<br>
+  images and sounds. If you pressed on a tile that contained<br>
+  a mine, you would hear an explosion sound and see an image<br>
+  of a mine. If you press any other tile, you would hear a<br>
+  clicking sound and see the number representing the number<br>
+  of mines surrounding that particular tile.<br>
+  <ul>
+  <li>Used <tt>BitmapFactory</tt> and <tt>Bitmap</tt> to create mine images</li>
+  <li>Used <tt>SoundPool</tt> to play the sounds</li>
+  </ul>
+  </div>
+  <br clear="both">
+  <div>
+  <a href="ms_images/game_activity_ms_v6_3.PNG">
+  <img src="ms_images/game_activity_ms_v6_3.PNG" width="223" height="400" 
+  alt="Minesweeper V6 Game Activity 3">
+  </a>
+  </div>
+  <div><br>
+  This is an example of what you would see if you won the<br>
+  game. You would not see any mine images and a "tada" sound<br>
+  would play to declare that you are the winner.<br>
+  <ul>
+  <li>Used <tt>SoundPool</tt> to play sound</li>
+  </ul>
+  </div>
+</body>
+</html>
